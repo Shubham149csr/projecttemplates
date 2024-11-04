@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hustlers - Project Report Templates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        /* Home Section */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url("3.jpg") no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Header with Logo */
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .logo {
+    height: 80px;
+    width: 200px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    gap: 10px; /* Space between image and text */
+}
+
+.logo-img {
+    height: 55px; /* Adjust this value as needed */
+    width: auto;
+    position: center;
+    object-fit: contain;
+}
+
+.logo span {
+    /* Style for the text part */
+    white-space: nowrap;
+}
+
+        /* Welcome Text */
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 2rem;
+            z-index: 2;
+        }
+
+        .welcome-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .welcome-text p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .explore-btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .explore-btn:hover {
+            background-color: yellow;
+            color: black;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            display: flex;
+            gap: 40px;
+            z-index: 10;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+            padding: 12px 25px;
+            background-color: rgba(255, 0, 0, 0.9);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .navbar a:hover {
+            background-color: yellow;
+            color: black;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Templates Section */
+        #templates {
+    padding: 80px 50px;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                url("1.jpg") no-repeat center center/cover;
+    text-align: center;
+    min-height: 100vh;
+}
+        
+        #templates h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: black;
+            position: relative;
+            display: inline-block;
+        }
+
+        #templates h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: red;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .template-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .template-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .template-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .template-item h3 {
+            font-size: 1.3rem;
+            margin: 15px 0;
+            color: black;
+        }
+
+        .download-btn {
+            padding: 12px 30px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .download-btn:hover {
+            background-color: yellow;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        /* About Us Section */
+        #about {
+    padding: 80px 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url("1.jpg") no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        #about h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: red;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            color: #f8f8f8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Section -->
+    <section id="home">
+        <!-- Header with Logo -->
+        <header class="header">
+            <div class="logo">
+                <img src="2.png" alt="Logo" class="logo-img">
+                <span>THE HUSTLERS</span>
+            </div>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#templates">Templates</a>
+            <a href="#about">About Us</a>
+        </nav>
+
+        <!-- Welcome Text -->
+        <div class="welcome-text">
+            <h1>Project Report Templates Hub</h1>
+            <p>Professional templates for your academic success</p>
+            <a href="#templates" class="explore-btn">Explore Templates</a>
+        </div>
+    </section>
+
+    <!-- Templates Section -->
+    <section id="templates">
+        <h2>Our Templates</h2>
+        <div class="template-grid">
+            <!-- Template 1 -->
+            <div class="template-item">
+                <img src="/api/placeholder/300/200" alt="Template 1">
+                <h3>Essay Template</h3>
+                <button class="download-btn">Download</button>
+            </div>
+            <!-- Template 2 -->
+            <div class="template-item">
+                <img src="/api/placeholder/300/200" alt="Template 2">
+                <h3>Research Paper</h3>
+                <button class="download-btn">Download</button>
+            </div>
+            <!-- Template 3 -->
+            <div class="template-item">
+                <img src="/api/placeholder/300/200" alt="Template 3">
+                <h3>Lab Report</h3>
+                <button class="download-btn">Download</button>
+            </div>
+            <!-- Template 4 -->
+            <div class="template-item">
+                <img src="/api/placeholder/300/200" alt="Template 4">
+                <h3>Case Study</h3>
+                <button class="download-btn">Download</button>
+            </div>
+            <!-- Template 5 -->
+            <div class="template-item">
+                <img src="/api/placeholder/300/200" alt="Template 5">
+                <h3>Thesis Template</h3>
+                <button class="download-btn">Download</button>
+            </div>
+            <!-- Template 6 -->
+            <div class="template-item">
+                <img src="/api/placeholder/300/200" alt="Template 6">
+                <h3>Resume Template</h3>
+                <button class="download-btn">Download</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At The Hustlers, we are dedicated to providing high-quality project templates that help students submit professional and well-organized reports. Our templates are designed with academic excellence in mind, ensuring you can focus on your content while we take care of the formatting.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 The Hustlers - Project Report Templates. All rights reserved.</p>
+    </footer>
+</body>
+</html>
